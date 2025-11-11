@@ -51,7 +51,7 @@ void SCAN(int req[], int n, int head, int tail) {
     printf("\nSCAN Disk Scheduling Order (Auto Direction: toward %s end): %d", 
            (dir == -1) ? "lower" : "higher", head);
 
-    if (dir == -1) {
+    if (dir == -1) { //lower
         for (int i = pos - 1; i >= 0; i--) {
             printf(" -> %d", temp[i]);
             total += abs(head - temp[i]);
