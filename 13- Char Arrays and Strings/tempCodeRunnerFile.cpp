@@ -1,5 +1,2 @@
-
-    // char word[30];
-    // cin>>word;
-    // cout<<"your word was: " <<word << endl;
-    // cout<<"length: "<< strlen(word)<< endl;
+  // cout<<"enter string : ";
+    // getline.cin(str, 50);
