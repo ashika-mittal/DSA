@@ -9,8 +9,8 @@ class Car {
         int* mileage;
 
         Car(string name, string color){
-            this->name= name;
-            this->color = color;
+            this-> name = name;
+            this-> color = color;
             mileage = new int;   //dynamic allocation
             *mileage = 250;
         }
