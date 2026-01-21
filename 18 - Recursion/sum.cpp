@@ -10,6 +10,6 @@ int sum (int n){
 }
 
 int main(){
-    cout<< sum(10) <<endl;
+    cout<< sum(6) <<endl;
     
 }
