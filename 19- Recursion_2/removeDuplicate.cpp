@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+//assuming all characters are lowercase.
+
 void removeDuplicate(int i , string str, string ans, bool map[26] ){
     if(i==str.size()){
         cout<<ans<<endl;
