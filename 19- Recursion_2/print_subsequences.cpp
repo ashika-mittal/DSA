@@ -21,4 +21,4 @@ int main(){
     cout<<"subsequences of "<<str<<" are : \n";
     printSubsequences(str, 0, "");
     return 0;
-}
+} 
