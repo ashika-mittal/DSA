@@ -17,6 +17,8 @@ void solve(string str, string output) {
         char ch = str[i];
 
         // remaining string after removing the character at index i
+        //eg. if str="abcdefgh" and i=2 then ch='c' 
+        // and remaining string will be "ab" + "defgh" = "abdefgh"
         string left = str.substr(0, i);
         string right = str.substr(i + 1);
 
