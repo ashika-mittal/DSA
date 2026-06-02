@@ -14,7 +14,7 @@ int partition(vector<int>& arr, int si, int ei){
     }
     i++;
     swap(arr[i], arr[ei]);
-    return i; // Return the partitioning index
+    return i; // Return the partitioning index (pivotidx)
 }
 
 
@@ -24,10 +24,10 @@ void quickSort(vector<int>& arr, int si, int ei){
         return;
     } //base case. 
 
-    int pivot = partition(arr, si, ei); //partitioning step
+    int pivotidx = partition(arr, si, ei); //partitioning step
 
-    quickSort(arr, si, pivot-1); //left part
-    quickSort(arr, pivot+1, ei); //right part
+    quickSort(arr, si, pivotidx-1); //left part
+    quickSort(arr, pivotidx+1, ei); //right part
 
 
 }
