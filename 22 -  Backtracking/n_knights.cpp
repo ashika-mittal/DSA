@@ -14,53 +14,43 @@ void printBoard(vector<vector<char>>& board){
 }
 
 bool isSafe(vector<vector<char>>& board, int row, int col){
-    // check column
-    for(int i=0;i<row;i++){
-        if(board[i][col]=='Q'){
-            return false;
-        }
-    }
+    // knight moves are (2,1), (2,-1), (-2,1), (-2,-1)
+    int dx[] = {2, 2, -2, -2, 1, 1, -1, -1};
+    int dy[] = {1, -1, 1, -1, 2, -2, 2, -2};
 
-    // check upper left diagonal
-    for(int i=row-1, j=col-1; i>=0 && j>=0; i--, j--){
-        if(board[i][j]=='Q'){
-            return false;
-        }
-    }
+    for(int i=0; i<8; i++){
+        int newRow = row + dx[i];
+        int newCol = col + dy[i];
 
-    // check upper right diagonal
-    for(int i=row-1, j=col+1; i>=0 && j<board.size(); i--, j++){
-        if(board[i][j]=='Q'){
-            return false;
+        if(newRow >= 0 && newRow < board.size() && newCol >= 0 && newCol < board.size()){
+            if(board[newRow][newCol] == 'K'){
+                return false;
+            }
         }
     }
 
     return true;
 }
 
-int nQueens(vector<vector<char>>& board, int row){
+void nKnights(vector<vector<char>>& board, int row){
 
     if(row==board.size()){
         printBoard(board);
-        return 1;
+        return;
     }
-    int count = 0;
+
     for(int col=0;col<board.size();col++){
         if(isSafe(board, row, col)){
-            board[row][col]='Q';
-            count += nQueens(board, row+1);
+            board[row][col]='K';
+            nKnights(board, row+1);
             board[row][col]='.';
         }
     }
-    return count;   
 }
 
 int main(){
     vector<vector<char>> board;
-    int n;
-    cout<<"Enter the value of n: ";
-    cin>>n;
-    cout<<"The initial board is: "<<endl;
+    int n=4;
     for(int i=0;i<n;i++){
         vector<char> newRow;
         for(int j=0;j<n;j++){
@@ -71,6 +61,5 @@ int main(){
 
     printBoard(board);
 
-    int count = nQueens(board, 0);
-    cout<<"Total solutions: "<<count<<endl; 
+    nKnights(board, 0);
 }
