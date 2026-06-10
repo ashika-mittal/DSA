@@ -1,6 +1,5 @@
 #include<iostream>
-using namespace std;    
-
+using namespace std;
 
 void printSudoku(int sudoku[][9]) {
     for(int i = 0; i < 9; i++) {
@@ -69,7 +68,6 @@ bool sudokuSolver(int sudoku[][9], int row, int col) {
     return false; // No valid digit found, trigger backtracking
 }
 
-
 int main(){
     int sudoku[9][9] = {{0, 0, 8, 0, 0, 0, 0, 0, 0},
                         {4, 9, 0, 1, 5, 7, 0, 0, 2},
@@ -84,7 +82,6 @@ int main(){
     printSudoku(sudoku);
     cout << "--------------------------" << endl;
     sudokuSolver(sudoku, 0, 0);
-    return 0;
-             
+    return 0;           
 }          
 
