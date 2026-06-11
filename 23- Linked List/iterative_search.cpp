@@ -142,7 +142,7 @@ class List {
             cout << endl; // Print a new line after printing all nodes
         }
 
-        int search(int key){
+        int searchItr(int key){
             Node* temp = head; // Start from the head of the list
             int pos = 1; // Position starts from 1
             while(temp != NULL){ // Traverse until the end of the list
@@ -178,5 +178,5 @@ int main(){
     int num;
     cin>>num;
 
-    cout << ll.search(num) << endl; // This will print the position of the entered number in the list.
+    cout << ll.searchItr(num) << endl; // This will print the position of the entered number in the list.
 }
