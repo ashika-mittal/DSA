@@ -10,6 +10,14 @@ class Node{
             data = val;
             next = NULL;
         }
+
+        ~Node(){ // destructor
+            cout<<"~Node() called for "<<data<<endl;
+            if (next != NULL){
+                    delete next; // This will recursively delete the next node in the list, effectively deleting the entire list when the head node is deleted.
+                    next = NULL; // Set next to NULL after deleting the next node
+                }
+        }
 };
 
 class List {
@@ -20,6 +28,18 @@ class List {
         List(){ // constructor
             head = NULL;
             tail = NULL;
+        }
+
+        ~List(){ // destructor
+            cout<<"~List() called"<<endl;
+            if(head != NULL){
+                delete head; // This will call the destructor of the Node class for each node in the list, starting from the head. 
+                //The destructor will recursively delete all nodes in the list.
+                head = NULL; // Set head to NULL after deleting the list
+                
+
+            }
+            
         }
 
         void push_front(int val){
@@ -106,4 +126,5 @@ int main(){
 
 
     ll.printList(); // This will print the elements of the linked list in order: 50 20 10 30 40 60
+    cout<<endl<<"Exiting main function"<<endl<<endl;
 }
