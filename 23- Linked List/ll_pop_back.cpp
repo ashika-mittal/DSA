@@ -129,7 +129,7 @@ class List {
             }
             delete temp->next; // Delete the last node
             temp->next = NULL; // Set the next pointer of the new tail to NULL
-            
+
             */
         }
 
@@ -170,6 +170,8 @@ int main(){
     ll.printList(); 
 
     ll.pop_front();
+    ll.printList(); 
+    ll.pop_back();
     ll.printList(); 
     
 }
