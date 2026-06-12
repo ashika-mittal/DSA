@@ -142,27 +142,20 @@ class List {
             cout << endl; // Print a new line after printing all nodes
         }
 
-        int searchItr(int key){
-            Node* temp = head; // Start from the head of the list
-            int pos = 1; // Position starts from 1
-            while(temp != NULL){ // Traverse until the end of the list
-                if(temp->data == key){ // If the current node's data matches the key, return the position
-                    return pos;
-                }
-                temp = temp->next; // Move to the next node
-                pos++; // Increment position
-            }
-            return -1; // Key not found in the list
-        }
+       
         
-        int recursiveSearch(Node* temp, int key, int pos){
-            if(temp == NULL){ // Base case: If we reach the end of the list without finding the key, return -1
+        int recursiveSearchHelper(Node* temp, int key, int pos){
+            if(temp == NULL){ // Base case: if we reach the end of the list without finding the key, return -1
                 return -1;
             }
             if(temp->data == key){ // If the current node's data matches the key, return the position
                 return pos;
             }
-            return recursiveSearch(temp->next, key, pos + 1); // Recursive call with the next node and incremented position
+            return recursiveSearchHelper(temp->next, key, pos + 1); // Recursive call with the next node and incremented position
+        }
+
+        int recursiveSearch(int key){
+            return recursiveSearchHelper(head, key, 1); // Start the recursive search from the head of the list and initial position 1
         }
 
 
@@ -191,5 +184,5 @@ int main(){
     cin>>num;
 
 
-    cout << ll.recursiveSearch(ll.head, num, 1) << endl; // This will print the position of the entered number in the list. The search starts from the head of the list and the initial position is set to 1.
+    cout << ll.recursiveSearch(num) << endl; // This will print the position of the entered number in the list. The search starts from the head of the list and the initial position is set to 1.
 }
