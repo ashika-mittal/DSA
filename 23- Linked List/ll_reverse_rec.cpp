@@ -143,18 +143,14 @@ class List {
         }
 
        
-        void reverseListitr(){
-            Node* prev = NULL;
-            Node* curr = head;
-            Node* next = NULL;
-
-            while(curr != NULL){
-                next = curr->next; // Store the next node
-                curr->next = prev; // Reverse the current node's pointer
-                prev = curr; // Move prev to the current node
-                curr = next; // Move to the next node
+        void reverseListrec(Node* curr, Node* prev){
+            if(curr == NULL){
+                head = prev; // Update head to the new first node (previously the last node)
+                return;
             }
-            head = prev; // Update head to the new first node (previously the last node)
+            Node* next = curr->next; // Store the next node
+            curr->next = prev; // Reverse the current node's pointer
+            reverseListrec(next, curr); // Recur for the next node with the current node as the new previous node
         }
 
 
@@ -180,6 +176,6 @@ int main(){
     ll.printList(); 
     
     
-    ll.reverseListitr(); // This will reverse the linked list iteratively
+    ll.reverseListrec(ll.head, NULL); // This will reverse the linked list recursively
     ll.printList(); 
 }
