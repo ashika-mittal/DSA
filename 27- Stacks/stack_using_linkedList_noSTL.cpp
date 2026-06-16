@@ -69,7 +69,7 @@ int main(){
 
     while(!s.isEmpty()){
         cout << s.top() << " "; // 1,2,3
-        s.pop(); 
-        
+        s.pop();   
     }
+    cout<<endl;
 }
