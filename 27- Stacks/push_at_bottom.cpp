@@ -38,7 +38,7 @@ int main() {
 
    print_stack(s);
 
-   push_at_bottom(s,33);
+   push_at_bottom(s,67);
    print_stack(s);
 
 }
