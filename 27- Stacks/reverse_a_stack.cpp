@@ -24,7 +24,7 @@ void reverse_a_stack(stack<int> &s){
     int temp = s.top();
     s.pop();
     reverse_a_stack(s);
-    push_at_bottom(s, temp);
+    push_at_bottom(s, temp); //backtrack
 }
 
 
