@@ -83,5 +83,5 @@ int main(){
     cout<<q.front()<<endl; // 2 3 4 
     q.push(5); //2 3 4 5
     cout<<q.front()<<endl; // 2 3 4 5 
-    q.display(); // 2 3 4 5 
+    q.display(); // 2 3 4 5
 }
