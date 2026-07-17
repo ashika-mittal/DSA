@@ -4,7 +4,8 @@ using namespace std;
 
 int main(){
 
-    //pairs in C++ STL : pair is a container that holds two values of same/ different data types
+    //pairs in C++ STL : pair is a container that holds two values of same / different data types
+    //it is also initialized using make_pair() function
 
     //sorting in pairs
     vector<int> start = {0,1,2};
@@ -28,8 +29,5 @@ int main(){
     for(int i=0; i<v.size(); i++){
         cout<<start[i]<<" "<<end[i]<<endl;
     }
-
-
-
 
 }
