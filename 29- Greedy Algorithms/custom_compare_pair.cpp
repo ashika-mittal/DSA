@@ -31,10 +31,16 @@ int main(){
     sort(v.begin(), v.end(), compare);
 
     //print the sorted pairs acc to second element of the pair
+    // for(int i=0; i<v.size(); i++){
+    //     start[i] = v[i].first;
+    //     end[i] = v[i].second;
+    //     cout<<start[i]<<" "<<end[i]<<endl;
+    // }
+
+    //OR
+
     for(int i=0; i<v.size(); i++){
-        start[i] = v[i].first;
-        end[i] = v[i].second;
-        cout<<start[i]<<" "<<end[i]<<endl;
+        cout<<v[i].first<<" "<<v[i].second<<endl;
     }
 
     
